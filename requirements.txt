@@ -1,0 +1,12 @@
+yt-dlp>=2023.1.1
+librosa>=0.10.0
+openai-whisper>=20230314
+stable-ts>=2.17.0
+scenedetect[opencv]>=0.6.1
+ffmpeg-python>=0.2.0
+numpy>=1.24.0
+scipy>=1.10.0
+Pillow>=9.0.0
+click>=8.1.0
+tqdm>=4.65.0
+# Optional (heavy — install manually if needed): demucs>=4.0.0 for vocal separation

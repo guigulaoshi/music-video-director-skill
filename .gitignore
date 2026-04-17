@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local Claude Code settings (per-user, hardcoded paths)
+.claude/settings.local.json
+.claude/commands/
+
+# Project temp files
+/tmp/
+*.mp4
+*.mp3
+*.wav
+*.jpg
+*.jpeg
+*.png
