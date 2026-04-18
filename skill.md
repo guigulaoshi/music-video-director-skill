@@ -103,9 +103,43 @@ Don't pick a number of sources before reasoning about the song. Instead, ask: **
 
 After mapping the song's demands section by section (from your Lyric-to-Visual Map), count how many distinct visual registers you need — and gather that many sources. A contemplative 90s folk ballad may need 2. A historical epic about the sweep of civilizations may need 5 or 6. The song tells you, not a formula.
 
+**For IP montages (famous shows / film franchises), aim for 10+ high-res sources, not 5–7.** When the source material is something like Game of Thrones, LOTR, Dune, Three Kingdoms, Avatar, MCU — i.e., a long-running show or multi-film IP with dozens of iconic moments — the "5–7 sources is enough" number is usually wrong. Each iconic moment deserves its own source clip, not a share of a generic episode rip. **Target 10–15 individual high-res scene rips** for a 3-minute edit of a famous IP. The cost is extra search time; the reward is every named moment getting its own clean, high-res window.
+
+**No single source should dominate the edit.** After building the EDL, compute per-source cut counts. **If any one source holds more than ~25% of cuts (or, worse, more than ~30% of total screen time), your palette is too thin.** The viewer will feel the monotony — same color palette, same location, same characters recurring — even if the individual cuts are good. The fix is not to re-edit; it's to *add more sources* and redistribute.
+
+Worked example: a 3-minute GoT edit with 45 cuts should have no single source owning more than ~11 cuts. If your plan has 22/45 from one clip, go download 3 more iconic-scene rips and redo the EDL. "I already have enough" is almost always wrong for IP edits — your edit will read as "scenes from one episode plus some filler" rather than "a tour of the show's greatest moments."
+
+**Download aggressively, then curate.** 10-minute download session upfront saves 30-minute re-work later. It's cheaper to download 15 candidate sources and discard 5 than to build the EDL around 3 sources and discover mid-way that your palette is thin. Think of source gathering as *shopping* — fill the cart broadly, then cut at the register.
+
 **What to do if your palette is incomplete:** After gathering initial sources and scanning their scene libraries, check your Lyric-to-Visual Map against what you actually have. If a key lyric demands a visual register you can't serve — grand landscape, intimate face, daylight action — go find a source that covers it. Don't compromise the edit because you stopped searching early.
 
 **Footage type is not restricted to battle.** For songs about the sweep of history ("success and failure all turn to nothing", "so many heroes washed away"), court intrigue, political betrayal, executions, councils of power, and character drama serve the lyrics just as well as combat — and often better. A king betrayed at a feast *is* the river of history washing away heroes. A scheming queen's face can carry "how many great figures have come and gone" more powerfully than another cavalry charge. Think thematically: if the song is about the rise and fall of kingdoms, your palette should include war *and* politics *and* human fate.
+
+**文戏 + 武戏 balance — drama AND action, not just action.** Even a 高燃 / epic / hype edit needs both registers. 武戏 alone (pure battle footage) becomes visually monotonous — the viewer's eye glazes at 3 minutes of helmets and cavalry. 文戏 (drama: faces, dialogue scenes, intimate character moments, political confrontations, quiet deaths) provides the contrast that makes 武戏 land. A chorus hits harder when the preceding verse lingered on a face. An army charge has meaning when we first saw the king who sent them. **Target roughly 40% 文戏 / 60% 武戏 for a hype edit, flipping for a ballad.** Before finalizing sources, count how many drama scenes vs. action scenes are in your Scene Library — if one is <20%, go find more.
+
+**Iconic / 名场面 prioritization.** For songs paired with well-known source material (popular films, famous TV shows), the viewer brings expectations. A LOTR edit that omits the Rohirrim charge feels incomplete. A Game of Thrones edit that skips the Red Wedding, Ned's execution, Cersei's walk of atonement, and the Sept destruction has failed to use the source's strongest visual moments. Before downloading anything, brainstorm the top 10–15 *iconic moments* from the source — then deliberately hunt for each. Don't settle for "any scene from S3" when you can name exactly which scene carries the cultural weight. The edit should make the viewer nod and say "yes, THAT moment," not "wait, what episode was that?"
+
+**Concrete workflow — list 名场面 BEFORE opening yt-dlp:**
+
+1. Write out 10–15 specific iconic moments from the source, ranked by recognition. Not "battle scene" — *named* moments. For LOTR: Beacons of Gondor lighting, Rohirrim charge at Pelennor, Aragorn at the Black Gate ("for Frodo!"), Helm's Deep wall breach, Gandalf vs. Balrog, Boromir's last stand, Legolas climbing the oliphaunt, Frodo at Mount Doom, Fellowship breaking, Gandalf the White's return, Witch-King vs. Théoden, the Argonath, Aragorn's coronation, the Eye of Sauron, Mines of Moria escape. For Game of Thrones: Ned's execution, Red Wedding, Blackwater wildfire, Purple Wedding (Joffrey's death), Oberyn vs. Mountain, Cersei's walk of shame, Sept of Baelor explosion, Hold the Door, Battle of the Bastards charge, Daenerys's Dracarys moments, Battle of Winterfell / Arya kills Night King, Daenerys burns King's Landing, Jon kills Daenerys.
+
+2. **Search for each specifically by name**, not by generic keywords. `site:bilibili.com 指环王 烽火台` beats `site:bilibili.com 指环王 战役混剪` every time. The first returns the Beacons of Gondor scene; the second returns fan edits.
+
+3. **Reject editor preference for "enough sources."** 6–10 sources is the *floor* for a famous-IP montage — treat each iconic moment as deserving its own dedicated rip. If you have 5 sources and 8 lyric sections clearly demand 8 different 名场面, go find the missing 3.
+
+4. **If a named 名场面 cannot be found anywhere**, tell the user which one is missing rather than substituting silently. "I couldn't find a clean rip of the Beacons of Gondor — want me to proceed without it or use [alternative]?" keeps the editorial trust intact.
+
+5. **Total source duration ≥ 10× the song length** is a useful diversity floor for IP edits. A 3-min song needs ≥ 30 minutes of raw footage across sources. Less than that and your palette is fighting against the song's variety.
+
+**Resolution is non-negotiable — always hunt for high-res first.** Before downloading a source, spend the extra search time to find the highest-resolution version available. **Target 1080p minimum; 4K if offered.** The difference shows up every single frame of the final render — 360p and 480p clips look like blurry smears when upscaled to 1080p output, no matter how iconic the scene is.
+
+Concrete rules:
+1. **Search explicitly for high-res.** Always include `1080p`, `HD`, `4K`, `蓝光`, `BD`, or `高清` in your query. A search without these modifiers usually surfaces whatever-happens-to-rank, which skews low-res.
+2. **When yt-dlp shows multiple formats, take the best.** Don't accept format 18 (360p) when 1080p is offered — pass `-f "bestvideo[height>=1080]+bestaudio/best"` or equivalent. If the site forces a low-res stream (YouTube SABR without PO token, geo-restricted bangumi), try a different platform before settling.
+3. **When Bilibili forces 1080p behind membership (`--cookies-from-browser` required), hunt for an alternate BV that doesn't.** There are almost always re-uploads of the same scene without the premium gate.
+4. **Reject <720p on principle — with one exception.** If the scene is absolutely iconic (Red Wedding, Cersei's walk, a single defining moment from a famous show) and no higher-res version exists anywhere you can reach, a 360p clip used in *short* cuts (<2s) amid otherwise high-res material is survivable — the fast cuts mask the softness. But for sustained holds (>3s) or hero shots, refuse anything below 720p.
+5. **Compare candidates head-to-head.** If you have 3 possible uploads of the same scene, always download the highest-resolution one even if the uploader channel looks worse. Content matters; upload quality matters twice.
+6. **Check resolution BEFORE scene detection.** Running scene detection on a 360p clip you're about to throw out is wasted time. `ffprobe -show_streams -select_streams v:0` takes 50ms — do it first, decide go/no-go, then invest in analysis.
 
 ### Searching for sources on Bilibili
 
@@ -162,6 +196,58 @@ Search criteria for clean audio (in priority order):
 
 If the user provides a URL directly and it turns out to be a mix/compilation, flag it before downloading:
 > "This looks like a compilation video — the audio may have voiceovers or sound effects from the original footage mixed in. Want me to find the official original release instead?"
+
+### Version-matching when the user asks for a specific version
+
+When the user asks for a *specific* rendition — **女生版 (female cover), 男女对唱 (duet), 钢琴版 (piano), 摇滚版 (rock), live, acoustic, DJ版, 伴奏 (karaoke)** — your job is to find THAT version. Not "something similar-sounding." Not a different high-pitched cover when they asked for a female singer. Not an epic symphony when they asked for an acoustic. The user chose that version for a reason (usually: that's the version they already love).
+
+Verification checklist before committing to a candidate:
+1. **Title contains the specific version tag** (e.g., "女生版", "钢琴版", "Live") — not just words that *imply* it
+2. **Pitch test is necessary but not sufficient.** A pitch-shifted male vocal at +10 keys reads female on f0 analysis but is NOT a female cover. Check: is the title from a known female artist? Does the uploader's channel sing female covers? Is it tagged as a cover (翻唱)?
+3. **Cross-reference the search summary.** If the user's requested version is well-known, search results will name a specific performer (e.g., "姜姜《真英雄》女生版"). Downloading a different BV and *hoping* it's female is a failure mode.
+4. **When uncertain, download 2 candidates and pick the right one.** A 180s audio download takes 10 seconds. Don't commit to a wrong version because you didn't want to spend 10 more seconds.
+
+If you cannot find the exact version after reasonable effort, **stop and tell the user** — don't substitute silently. A message like "I couldn't find the 女生版 as a clean standalone upload on Bilibili — want me to use [specific alternative] or search YouTube?" is better than delivering the wrong song and calling it done.
+
+### Reject audio with dialogue/voiceover/SFX bleed (推广曲 trap)
+
+An "official" audio upload is not enough. A 推广曲 (promo song), OST片头/OST片尾, or any tie-in audio for a film/TV property often has **iconic dialogue, voiceover narration, or sound effects mixed over the music**. Those will be audible in the final MV and ruin it — the song no longer sounds like a song, it sounds like a trailer.
+
+**Why the trap exists:** a 推广曲 by definition is promoting a movie/show, so producers commonly mix in quotable dialogue lines from that property for marketing appeal. The song still sounds like a song in preview, but the dialogue becomes unmistakable when edited against actual footage.
+
+**Rules:**
+1. **Always sample-listen the downloaded audio at 3+ random points before committing.** Waveform / dB level inspection is NOT sufficient — dialogue is audible but doesn't change the RMS envelope much. Use:
+   ```bash
+   ffplay -ss 30  -t 5  -autoexit audio.mp3   # mid-song
+   ffplay -ss 90  -t 5  -autoexit audio.mp3   # later
+   ffplay -ss 150 -t 5  -autoexit audio.mp3   # toward end
+   ```
+   You need your own ears (or the user's) on the file — there is no automated check for "is there a movie character talking over the chorus."
+2. **Audio-source priority for tie-in songs:**
+   - ✅ Artist's official audio upload on streaming (网易云/QQ音乐/酷狗/Spotify) — pure track
+   - ✅ Official MV (music video) without a movie tie-in trailer-style cut
+   - ✅ "动态歌词版" / "歌词版" lyric videos from reputable uploaders — usually clean
+   - ❌ **Avoid** titles like `推广曲`, `宣传曲`, `OST片头`, `OST片尾`, `预告曲`, `trailer mix` when the song is for a film/TV IP — high dialogue-overlay risk
+3. **If the only available candidate is a 推广曲**, search aggressively for an alternative using `{artist} {song} 纯音乐`, `{song} 无对白`, or `{song} 歌词版` before falling back. Ask the user before committing.
+
+### Bilibili audio-only download bug: `yt-dlp -x --audio-format mp3` silences the track
+
+**Symptom:** on Bilibili, `yt-dlp -x --audio-format mp3 URL` produces a valid-looking MP3 with ~-90dB mean volume (effectively silent), while the underlying m4a source is fine (-13dB mean, 0dB max).
+
+**Cause:** yt-dlp's internal post-processing step when converting Bilibili m4a → mp3 silences the audio. The root m4a itself is intact.
+
+**Workaround — download raw m4a, convert with ffmpeg:**
+```bash
+# 1. Download the raw m4a (format 30280 is Bilibili's AAC audio stream)
+yt-dlp -f 30280 -o "audio_raw.%(ext)s" "BILIBILI_URL"
+# 2. Convert with ffmpeg explicitly
+ffmpeg -i audio_raw.m4a -c:a libmp3lame -q:a 0 audio.mp3
+# 3. Verify volume before using
+ffmpeg -i audio.mp3 -af volumedetect -f null - 2>&1 | grep mean_volume
+# Reject anything below -40dB mean.
+```
+
+**Do NOT use `yt-dlp -x --audio-format mp3` on Bilibili sources.** The bug surfaces silently — the download succeeds, the file plays, but the rendered MV comes out with no audio and no warning.
 
 Confirm all inputs back to the user in a clear summary before proceeding. Do not start downloading until confirmed.
 
@@ -267,11 +353,14 @@ Now open the **first keyframe** of each newly downloaded clip and look for:
 | Center overlay | promotional text anywhere in the frame center (e.g. "Follow & Like!" banners, channel branding) | **Reject** — same |
 | Letterbox bars | Permanent black bars top+bottom across all frames | **Reject** unless you plan to crop (`ffmpeg -vf crop`) — usually signals a fan edit |
 | Burned-in subtitles (hardsubs) | Dialog text burned into bottom of frame | **Partial use** — see below |
+| Awards / credits text slide | Full-screen text listing nominations, awards, or cast (common in fan-edit tails) | **Reject that timestamp range** — never include a text-only slide in the EDL |
+| Rolling end credits | Scrolling names/text across otherwise-empty background | **Reject that timestamp range** — same |
+
+**Fan-edit tails.** Fan compilations on Bilibili frequently append 30–60s of text slides at the end of the clip: Emmy nominations, awards lists, editor's notes, subscribe prompts. Scene detection will segment these as normal scenes and they're easy to sample unknowingly — e.g., a scene library entry at t=75.9 in `battle_of_bastards.mp4` that *looks* like valid footage in summary metadata but is in fact pure Chinese awards text. Always sample a keyframe from the last 30–60s of every fan-edit clip; if it's a text slide, mark that range as `REJECTED` in the Scene Library so no EDL cut lands there. The user will flag "rolling credit / lots of text" the moment they see the rendered MV if you miss this.
 
 **How to check quickly:**
 ```bash
 # Extract frame at t=5s and t=30s and look at both
-export PATH="$PATH:/opt/homebrew/opt/ffmpeg-full/bin"
 ffmpeg -ss 5 -i "$PROJECT_DIR/sources/clip.mp4" -frames:v 1 /tmp/check_5s.jpg -y 2>/dev/null
 ffmpeg -ss 30 -i "$PROJECT_DIR/sources/clip.mp4" -frames:v 1 /tmp/check_30s.jpg -y 2>/dev/null
 ```
@@ -633,7 +722,12 @@ Scene 000 (0.0s → 8.4s, 8.4s):
                   with a one-line reason for each match]
   Usability    : excellent / good / limited / avoid
   Avoid if     : [any reason this scene might be problematic: visible subtitles, watermarks,
-                  jarring color, too short to use, original narrative too strong to override]
+                  jarring color, too short to use, original narrative too strong to override,
+                  empty landscape with no human/dragon/animal subject, text-only slide]
+  Has subject  : yes / no — if the frame is pure scenery with no figure, animal, vehicle,
+                 building, or fire/action element, mark `no`. Empty-field scenes are a
+                 frequent rejection reason: users read them as "why is there nothing here?"
+                 even when composition is pretty.
 ```
 
 **Important on image reading**: Read every keyframe. Do not skip or summarize in batches. A scene you described without looking at may be a perfect match for a key lyric — or unusable for reasons only visible in the image (watermarks, jarring color, wrong composition). Every scene gets full treatment.
@@ -785,11 +879,15 @@ For each cut point, consult `lyric_lines.json` and `emotion_timeline.json` to kn
 
 ### 6e. In/Out Point Selection
 
-- **source_in**: Never 0.0 — start 0.2–0.5s into a scene to avoid abrupt scene-open
+- **source_in**: Never 0.0 — start at least **3 frames (≈0.125s at 24fps)** after the scene's detected `start_time`. This buffer absorbs scene-detection jitter and ffmpeg seek imprecision; landing `source_in` exactly at `scene_start` produces a 1–3 frame flash of the *previous* scene at the cut's head.
 - **source_out**: Stop at least 0.3s before the scene's detected end to avoid source-clip cuts
 - Duration should match the section's target ASL
-- **Never split across a scene boundary** (the `start_time`/`end_time` from detect-scenes are your atoms)
+- **Never split across a scene boundary** (the `start_time`/`end_time` from detect-scenes are your atoms). Concretely, the entire cut must fit inside a single scene with head buffer — i.e. `scene_duration >= cut_duration + 3/fps`. If the scene you want is too short for the section's target ASL, either shorten the cut or pick a different scene; don't bleed across the boundary.
 - **Never use a sub-range of a scene that spans more than one shot.** If a scene is >8s from a fan edit clip, treat it as unverified — inspect it or re-detect at a lower threshold before using any sub-range from it. Using a sub-range of a falsely-long "scene" is the leading cause of unintended sub-1s visual cuts in the output.
+
+**Why the head buffer matters — the flash artifact.** Scene detection identifies boundaries at the nearest keyframe, not the precise cut. Renderer seeks (`ffmpeg -ss`) resolve to the nearest keyframe at or before the requested timestamp. Landing `source_in = scene_start` exactly means the renderer may back up 1–3 frames into the *preceding* scene, producing a visible flash at the head of every such cut. Worse, if `source_in` → `source_out` straddles an internal scene boundary (e.g. cut duration 4.8s in a scene only 4.25s long), each boundary crossed produces its own flash — a 4-boundary span shows 4 flashes inside one cut. **This is the most frequent "something feels wrong" complaint after a render.** The fix is always at EDL-build time, never at render time.
+
+**Recommended: run a scene-safety post-pass after building the EDL.** Once the EDL is generated, walk every cut and verify `source_in >= scene_start + 3/fps` AND `source_out <= scene_end`. If any cut fails, snap `source_in` to `(nearest qualifying scene start) + 3/fps`, preserving editorial intent by picking the qualifying scene whose start is closest to the originally chosen `source_in`. If no scene in the preferred clip fits after the per-clip high-water mark, fall back to a themed alternate clip (action→action, drama→drama) rather than truncating or crossing boundaries. This post-pass typically rescues 30–50% of cuts in a first-draft EDL — it is not optional for fan-edit sources with dense rapid-cut sections.
 
 ### 6f. Write the EDL JSON
 
@@ -905,6 +1003,19 @@ If the user requests changes:
 
 Always **rewrite the entire EDL** — do not attempt partial JSON edits. Re-present the plan summary after every revision.
 
+### 8a. Post-render visual audit (when the user rejects cuts by feel)
+
+When the user says things like *"remove the empty fields"*, *"I don't want shots with text / rolling credits"*, *"cut X feels wrong"* — you need to identify the exact offending cuts without asking them to timestamp each one. Run this workflow:
+
+1. **Extract a midpoint frame and a start frame from every cut** into a `frame_audit/` directory:
+   ```bash
+   for each cut in edit_plan.json: ffmpeg -ss (timeline_start+dur/2) -i output.mp4 -frames:v 1 frame_audit/cut{n}_t{ts}.jpg
+   ```
+2. **Build a contact sheet** with ffmpeg's `xstack` so you can scan 25–30 cuts at once visually. Pair this with a second sheet for the remaining cuts. Read both images.
+3. **Categorize each cut** against the user's complaint: empty-field, text-slide, hardsub-heavy, internal-scene-crossing, too-dark, wrong-subject. Present the user the list of specific cut numbers that match their complaint, grouped by reason, before editing.
+4. **Scout replacements per source**: for each source clip, extract a dense sweep of keyframes in the src_in range that's still available (respecting per-clip HWM) and build a per-source contact sheet. Read those sheets to pick new `source_in` values deliberately rather than guessing from metadata alone.
+5. **Re-run the scene-safety pass** (see Step 9) after choosing replacements — new src_in values can still straddle boundaries. Never skip this step on a revision round; the flash artifacts the user complained about often return if you re-pick src_in without re-running the safety check.
+
 ---
 
 ## STEP 9 — Validate EDL, then Render
@@ -922,7 +1033,11 @@ Exit code 0 = all clear. Exit code 1 = errors reported — fix them before proce
 - `source_validity`: A cut has source_out ≤ source_in → fix the timestamps
 - `no_repeats`: Exact duplicate (source_file, source_in) pairs → remove or relocate
 
-Once validation passes:
+**`mvd validate` does NOT check scene-boundary safety.** The validator only enforces internal EDL consistency (overlap, ordering, coverage). It does not know whether `source_in` lands inside a scene or straddles a boundary. You must run a separate scene-safety pass before rendering — see Step 6e. A validated EDL can still produce 1–3 frame flashes at every boundary-crossing cut.
+
+**Scene-safety pass (do this after validate, before render):** walk each cut and for its source clip verify `source_in >= scene_start + 3/fps` AND the cut fits inside one scene (`scene_duration >= cut_duration + 3/fps`). If any cut fails, snap `source_in` to the nearest qualifying scene start + 3/fps, preserving per-clip forward ordering. If no scene in the preferred clip fits, reassign to a themed-alternate clip (action→action, drama→drama). This step typically touches 30–50% of cuts in a first-draft EDL against fan-edit sources.
+
+Once validation and scene-safety both pass:
 
 ```bash
 mvd render "$PROJECT_DIR/edit_plan.json" \
@@ -943,26 +1058,95 @@ Rendering takes roughly 2–3 seconds per cut (total: several minutes for a full
 
 After rendering, crop any black letterbox/pillarbox bars so the output fills the viewport cleanly.
 
+**Do NOT cover uploader watermarks or channel logos with drawbox/delogo/crop patches.** Bilibili / YouTube re-uploads often have semi-transparent corner watermarks ("bilibili", uploader handle in a corner). The temptation is to cover them with black boxes so the output "looks clean." **Don't.** Black boxes sitting in the same corner across every cut are more visually disruptive than the semi-transparent watermarks themselves — the viewer's eye tracks the static black blocks against the moving footage. Watermarks read as "source material has a watermark." Black boxes read as "the editor was hiding something," which is worse.
+
+The only acceptable watermark-mitigation moves are:
+- Find a cleaner upload (best fix — go back and re-download from a different uploader)
+- Use a gentle scale-and-crop zoom (e.g., 5% zoom to push corner watermarks off-frame) applied uniformly to the whole output, IF it doesn't cut off important action
+- Leave them in (default) — in a fast-cut montage the eye doesn't dwell on them
+
+Reject any instinct to pad black rectangles over text. Same for hardsubbed dialogue subtitles baked into the source — either pick clips without them (check keyframes at Step 2) or accept they're there.
+
+### Attribution watermark (always applied)
+
+Every rendered MV must carry a small attribution watermark in the **top-left** corner. This is our own credit line, not a cover-up of source watermarks — the prohibition above on hiding Bilibili/uploader watermarks does not apply here. Pick the text by song language:
+
+- **English / Western-language song** → `Edited by github.com/guigulaoshi/music-video-director-skill`
+- **Any other language** (Chinese, Japanese, Korean, …) → `本视频由guigulaoshi/music-video-director-skill剪辑`
+
+Specs:
+- Width: roughly **50% of the frame width** (`fontsize=32` gives ~46% for the CN text and ~54% for the EN text at 1920px output — bracketing the target; verified on a 1920×1080 testsrc)
+- Opacity: **70%** (`fontcolor=white@0.7`)
+- Position: top-left with ~24px padding (`x=24:y=20`)
+- Use a CJK-capable font so the Chinese version renders correctly. **`fontfile=` paths must not contain spaces** — ffmpeg's filter parser splits on whitespace and the filter graph init will fail with "Error initializing filters". Copy the system font to a space-free path before passing it. Tried in order:
+  1. `/System/Library/Fonts/PingFang.ttc` (macOS, when installed)
+  2. `/System/Library/Fonts/Hiragino Sans GB.ttc` (macOS default — present on every modern macOS)
+  3. `/System/Library/Fonts/STHeiti Medium.ttc` (older macOS fallback)
+  4. `/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc` (Linux)
+  5. `/Library/Fonts/Arial Unicode.ttf` (last-resort macOS)
+
+To avoid shell-escaping headaches with mixed CJK + slashes, write the watermark text to a file and pass it via `textfile=`.
+
 ```bash
-FFMPEG_BIN="/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg"
+# Resolve ffmpeg portably — prefer the one on PATH, then check common install locations.
+FFMPEG_BIN=$(command -v ffmpeg)
+[ -z "$FFMPEG_BIN" ] && for p in \
+  /opt/homebrew/bin/ffmpeg \
+  /opt/homebrew/opt/ffmpeg-full/bin/ffmpeg \
+  /usr/local/bin/ffmpeg \
+  /usr/bin/ffmpeg; do
+  [ -x "$p" ] && FFMPEG_BIN="$p" && break
+done
+[ -z "$FFMPEG_BIN" ] && { echo "ffmpeg not found — install it first"; exit 1; }
+
+# 1. Pick the watermark text by song language
+if [ "$SONG_LANG" = "en" ]; then
+  WATERMARK="Edited by github.com/guigulaoshi/music-video-director-skill"
+else
+  WATERMARK="本视频由guigulaoshi/music-video-director-skill剪辑"
+fi
+printf '%s' "$WATERMARK" > "$PROJECT_DIR/watermark.txt"
+
+# 2. Pick the first CJK-capable font that exists, then copy to a space-free path
+#    (drawtext's fontfile= cannot contain spaces — the filter graph init will fail)
+FONT_SRC=""
+for f in \
+  "/System/Library/Fonts/PingFang.ttc" \
+  "/System/Library/Fonts/Hiragino Sans GB.ttc" \
+  "/System/Library/Fonts/STHeiti Medium.ttc" \
+  "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc" \
+  "/Library/Fonts/Arial Unicode.ttf"; do
+  [ -f "$f" ] && FONT_SRC="$f" && break
+done
+[ -z "$FONT_SRC" ] && { echo "No CJK font found — install one or override FONT_SRC"; exit 1; }
+FONT="$PROJECT_DIR/wm_font.${FONT_SRC##*.}"
+cp "$FONT_SRC" "$FONT"
 
 mv "$PROJECT_DIR/output.mp4" "$PROJECT_DIR/output_raw.mp4"
 
-# Auto-detect black bar crop (sample first 60s for speed)
+# 3. Auto-detect black bar crop (sample first 60s for speed)
 CROP=$($FFMPEG_BIN -i "$PROJECT_DIR/output_raw.mp4" \
   -vf "cropdetect=24:16:0" -t 60 -f null - 2>&1 \
   | grep -oE 'crop=[0-9]+:[0-9]+:[0-9]+:[0-9]+' \
   | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
 echo "Detected crop: $CROP"
 
+# 4. Crop + scale + watermark in a single re-encode
+DRAWTEXT="drawtext=fontfile=${FONT}:textfile=${PROJECT_DIR}/watermark.txt:fontsize=32:fontcolor=white@0.7:x=24:y=20:shadowcolor=black@0.5:shadowx=1:shadowy=1"
 $FFMPEG_BIN -y -i "$PROJECT_DIR/output_raw.mp4" \
-  -vf "${CROP},scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080" \
+  -vf "${CROP},scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,${DRAWTEXT}" \
   -c:v libx264 -preset fast -crf 18 \
   -c:a copy \
   "$PROJECT_DIR/output.mp4"
 
 rm "$PROJECT_DIR/output_raw.mp4"
+
+# 5. Sanity check: extract a frame and confirm the watermark rendered.
+#    If the text appears as boxes/tofu, the chosen font lacks CJK glyphs — switch font and re-run.
+$FFMPEG_BIN -y -ss 2 -i "$PROJECT_DIR/output.mp4" -frames:v 1 "$PROJECT_DIR/watermark_check.jpg" 2>/dev/null
 ```
+
+Then Read `$PROJECT_DIR/watermark_check.jpg` and verify visually: the text is legible, sits in the top-left, occupies roughly half the width, and is not blown out or invisible. If it looks wrong, adjust `fontsize`, `x`/`y`, or `fontcolor` opacity and re-run step 4.
 
 ### Rename the output to something meaningful
 

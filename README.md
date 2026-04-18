@@ -4,6 +4,16 @@ An AI agent skill that turns music + raw footage into an edited music video — 
 
 Works with any AI agent that can run shell commands and (optionally) read images.
 
+## 简介（中文）
+
+这是一个让 AI 帮你剪音乐视频的 skill。给它一首歌 + 一堆素材（B站/YouTube 链接或本地文件）+ 一句导演意图（比如"高燃混剪"或"伤感抒情"），它会自动：分析歌曲节奏与歌词、识别素材里的镜头、按音乐结构和歌词意象编排剪辑表（EDL）、最后渲染出成片。
+
+支持中英文歌词与素材，自动给成片左上角打"本视频由 guigulaoshi/music-video-director-skill 剪辑"水印。安装只需一步：把 `skill.md` 放进 AI agent 的 skills 目录（详见下方 Installation）。CLI 工具 `mvd` 第一次运行时自动装好。
+
+适用于 Claude Code 或任何能跑 shell 命令的 AI agent。
+
+---
+
 ## How it works
 
 1. You provide: a music audio URL/file, video clip URLs/files, and a director's instruction.
